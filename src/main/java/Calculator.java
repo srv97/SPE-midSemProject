@@ -118,7 +118,7 @@ public class Calculator {
                         System.out.println("Thank You!");
                         break;
                     default:
-                        System.out.println("Invalid choice");
+                        System.out.println("Invalid choice!");
                         break;
                 }
 
