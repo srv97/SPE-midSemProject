@@ -22,10 +22,7 @@ public class Calculator {
         return a/b;
     }
 
-    public double squareroot(double a)
-    {
-        return Math.sqrt(a);
-    }
+    public double squareroot(double a) { return Math.sqrt(a); }
 
     public BigInteger factorial(double a) {
         BigInteger result = BigInteger.ONE;
@@ -39,10 +36,7 @@ public class Calculator {
         return Math.log(a);
     }
 
-    public double power(double a,double b)
-    {
-        return Math.pow(a,b);
-    }
+    public double power(double a,double b) { return Math.pow(a,b); }
 
     public static void main(String[] args) {
         System.out.println("Hello there this is calculator program");
@@ -63,7 +57,7 @@ public class Calculator {
             System.out.println("Enter 6 for Factorial");
             System.out.println("Enter 7 for Natural logarithm");
             System.out.println("Enter 8 for Power Function");
-            System.out.println("Enter 9 to exit\n");
+            System.out.println("Enter 9 to Exit\n");
             System.out.println("Enter your choice : ");
             opt = sc.nextInt();
 
