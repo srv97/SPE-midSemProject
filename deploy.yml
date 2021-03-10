@@ -6,10 +6,5 @@
       docker_image:
         name: srv97/devcal
         source: pull
-    - name: Create default containers
-      docker_container:
-        name: c1
-        image: srv97/devcal
-        state: present
 
 
