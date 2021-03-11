@@ -1,7 +1,7 @@
-import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Calculator {
+
     public double addition(double a,double b)
     {
         return a+b;
@@ -21,15 +21,7 @@ public class Calculator {
     {
         return a/b;
     }
-
     public double squareroot(double a) { return Math.sqrt(a); }
-
-    public BigInteger factorial(double a) {
-        BigInteger result = BigInteger.ONE;
-        for (int i = 2; i <= a; i++)
-            result = result.multiply(BigInteger.valueOf(i));
-        return result;
-    }
 
     public double logarithm(double a)
     {
@@ -37,6 +29,17 @@ public class Calculator {
     }
 
     public double power(double a,double b) { return Math.pow(a,b); }
+
+    public double factorial(double a) {
+        long fact = 1;
+        int i = 1;
+        while(i<=a)
+        {
+            fact = fact * i;
+            i++;
+        }
+        return fact;
+    }
 
     public static void main(String[] args) {
         System.out.println("Hello there this is calculator program");
@@ -62,61 +65,62 @@ public class Calculator {
             opt = sc.nextInt();
 
 
-                switch (opt) {
-                    case 1:
-                        System.out.println("Enter two number : ");
-                        a = sc.nextInt();
-                        b = sc.nextInt();
-                        System.out.println(a + " + " + b + " = " + cal.addition(a, b));
-                        break;
-                    case 2:
-                        System.out.println("Enter two number : ");
-                        a = sc.nextInt();
-                        b = sc.nextInt();
-                        System.out.println(a + " - " + b + " = " + cal.subtraction(a, b));
-                        break;
-                    case 3:
-                        System.out.println("Enter two number : ");
-                        a = sc.nextInt();
-                        b = sc.nextInt();
-                        System.out.println(a + " * " + b + " = " + cal.multiplication(a, b));
-                        break;
-                    case 4:
-                        System.out.println("Enter two number : ");
-                        a = sc.nextInt();
-                        b = sc.nextInt();
-                        System.out.println(a + " / " + b + " = " + cal.division(a, b));
-                        break;
-                    case 5:
-                        System.out.println("Enter a number : ");
-                        a = sc.nextInt();
-                        System.out.println("Square Root of " + a + " = " + cal.squareroot(a));
-                        break;
-                    case 6:
-                        System.out.println("Enter a number : ");
-                        a = sc.nextInt();
-                        System.out.println("Factorial of " + a + " = " + cal.factorial(a));
-                        break;
-                    case 7:
-                        System.out.println("Enter a number : ");
-                        a = sc.nextInt();
-                        System.out.println("Log of " + a + " = " + cal.logarithm(a));
-                        break;
-                    case 8:
-                        System.out.println("Enter two number : ");
-                        a = sc.nextInt();
-                        b = sc.nextInt();
-                        System.out.println(a + " to power " + b + " = " + cal.power(a, b));
-                        break;
-                    case 9:
-                        System.out.println("Thank You!");
-                        break;
-                    default:
-                        System.out.println("Invalid choice!");
-                        break;
-                }
+            switch (opt) {
+                case 1:
+                    System.out.println("Enter two number : ");
+                    a = sc.nextInt();
+                    b = sc.nextInt();
+                    System.out.println(a + " + " + b + " = " + cal.addition(a, b));
+                    break;
+                case 2:
+                    System.out.println("Enter two number : ");
+                    a = sc.nextInt();
+                    b = sc.nextInt();
+                    System.out.println(a + " - " + b + " = " + cal.subtraction(a, b));
+                    break;
+                case 3:
+                    System.out.println("Enter two number : ");
+                    a = sc.nextInt();
+                    b = sc.nextInt();
+                    System.out.println(a + " * " + b + " = " + cal.multiplication(a, b));
+                    break;
+                case 4:
+                    System.out.println("Enter two number : ");
+                    a = sc.nextInt();
+                    b = sc.nextInt();
+                    System.out.println(a + " / " + b + " = " + cal.division(a, b));
+                    break;
+                case 5:
+                    System.out.println("Enter a number : ");
+                    a = sc.nextInt();
+                    System.out.println("Square Root of " + a + " = " + cal.squareroot(a));
+                    break;
+                case 6:
+                    System.out.println("Enter a number : ");
+                    a = sc.nextInt();
+                    System.out.println("Factorial of " + a + " = " + cal.factorial(a));
+                    break;
+                case 7:
+                    System.out.println("Enter a number : ");
+                    a = sc.nextInt();
+                    System.out.println("Log of " + a + " = " + cal.logarithm(a));
+                    break;
+                case 8:
+                    System.out.println("Enter two number : ");
+                    a = sc.nextInt();
+                    b = sc.nextInt();
+                    System.out.println(a + " to power " + b + " = " + cal.power(a, b));
+                    break;
+                case 9:
+                    System.out.println("Thank You!");
+                    break;
+                default:
+                    System.out.println("Invalid choice!");
+                    break;
+            }
 
         }while(opt!=9);
+
 
 
 
