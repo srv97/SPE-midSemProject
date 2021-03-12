@@ -1,9 +1,12 @@
 import java.util.Scanner;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Calculator {
 
     public double addition(double a,double b)
     {
+        logger.info("Calculating sum of two number : "+a+" and "+b);
         return a+b;
     }
 
@@ -40,6 +43,7 @@ public class Calculator {
         }
         return fact;
     }
+    private static final Logger logger = LogManager.getLogger(Calculator.class);
 
     public static void main(String[] args) {
         System.out.println("Hello there this is calculator program");
