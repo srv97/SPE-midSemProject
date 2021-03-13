@@ -6,40 +6,115 @@ public class Calculator {
 
     public double addition(double a,double b)
     {
+        double res;
         logger.info("Calculating sum of two number : "+a+" and "+b);
-        return a+b;
+        res = a+b;
+        logger.info("Sum is : "+res);
+        return res;
     }
 
     public double subtraction(double a,double b)
     {
-        return a-b;
+        double res;
+        logger.info("Calculating difference of two number : "+a+" and "+b);
+        res = a-b;
+        logger.info("Difference is : "+res);
+        return res;
     }
 
     public double multiplication(double a,double b)
     {
-        return a*b;
+        double res;
+        logger.info("Calculating product of two number : "+a+" and "+b);
+        res = a*b;
+        logger.info("Product is : "+res);
+        return res;
     }
 
     public double division(double a,double b)
     {
-        return a/b;
+        double res;
+        logger.info("Calculating division of two number : "+a+" and "+b);
+        res = a/b;
+        logger.info("Quotient is : "+res);
+        return res;
     }
-    public double squareroot(double a) { return Math.sqrt(a); }
+    public double squareroot(double a) {
+        double res=0;
+        try {
+            logger.info("Calculating squareroot of : " + a);
+            if(a<0)
+            {
+                res=Double.NaN;
+                throw new Exception("Number < 0");
+            }
+            else
+                res = Math.sqrt(a);
+        } catch (Exception e) {
+            logger.error("Number cannot be negative "+e.getMessage());
+        }
+        finally {
+            logger.info("Squareroot is : "+res);
+        }
+        return res;
+    }
 
     public double logarithm(double a)
     {
-        return Math.log(a);
+        double res=0;
+        try {
+            logger.info("Calculating natural logarithm of : " + a);
+            if(a<0)
+            {
+                res=Double.NaN;
+                throw new Exception("Number < 0");
+            }
+            else
+                res = Math.log(a);
+        } catch (Exception e) {
+            logger.error("Invalid Number "+e.getMessage());
+        }
+        finally {
+            logger.info("log is : "+res);
+        }
+        return res;
     }
 
-    public double power(double a,double b) { return Math.pow(a,b); }
+    public double power(double a,double b) {
+        double res;
+        logger.info("Calculating "+a+" to power "+b);
+        res = Math.pow(a,b);
+        logger.info("Result is : "+res);
+        return res;
+    }
 
     public double factorial(double a) {
-        long fact = 1;
-        int i = 1;
-        while(i<=a)
+        logger.info("Calculating factorial for "+a);
+        double fact = 1;
+        try
         {
-            fact = fact * i;
-            i++;
+            if(a<0)
+            {
+                fact=Double.NaN;
+                throw new Exception("Number < 0");
+            }
+            if(a!=(int)a)
+            {
+                fact=Double.NaN;
+                throw new Exception("Number is float");
+            }
+            int i = 1;
+            while(i<=a) {
+                fact = fact * i;
+                i++;
+            }
+        }
+        catch (Exception e)
+        {
+            logger.error("Invalid Number "+e.getMessage());
+        }
+        finally {
+            logger.info("Result is : "+fact);
         }
         return fact;
     }
@@ -53,7 +128,7 @@ public class Calculator {
         int opt;
 
         Calculator cal = new Calculator();
-        System.out.println("-------------------Welcome-------------\n");
+        System.out.println("--------------------Welcome--------------------\n");
         do {
             System.out.println("Operations : ");
             System.out.println("Enter 1 for Addition");
@@ -74,60 +149,55 @@ public class Calculator {
                     System.out.println("Enter two number : ");
                     a = sc.nextInt();
                     b = sc.nextInt();
-                    System.out.println(a + " + " + b + " = " + cal.addition(a, b));
+                    System.out.println(a + " + " + b + " = " + cal.addition(a, b)+"\n");
                     break;
                 case 2:
                     System.out.println("Enter two number : ");
                     a = sc.nextInt();
                     b = sc.nextInt();
-                    System.out.println(a + " - " + b + " = " + cal.subtraction(a, b));
+                    System.out.println(a + " - " + b + " = " + cal.subtraction(a, b)+"\n");
                     break;
                 case 3:
                     System.out.println("Enter two number : ");
                     a = sc.nextInt();
                     b = sc.nextInt();
-                    System.out.println(a + " * " + b + " = " + cal.multiplication(a, b));
+                    System.out.println(a + " * " + b + " = " + cal.multiplication(a, b)+"\n");
                     break;
                 case 4:
                     System.out.println("Enter two number : ");
                     a = sc.nextInt();
                     b = sc.nextInt();
-                    System.out.println(a + " / " + b + " = " + cal.division(a, b));
+                    System.out.println(a + " / " + b + " = " + cal.division(a, b)+"\n");
                     break;
                 case 5:
                     System.out.println("Enter a number : ");
                     a = sc.nextInt();
-                    System.out.println("Square Root of " + a + " = " + cal.squareroot(a));
+                    System.out.println("Square Root of " + a + " = " + cal.squareroot(a)+"\n");
                     break;
                 case 6:
                     System.out.println("Enter a number : ");
                     a = sc.nextInt();
-                    System.out.println("Factorial of " + a + " = " + cal.factorial(a));
+                    System.out.println("Factorial of " + a + " = " + cal.factorial(a)+"\n");
                     break;
                 case 7:
                     System.out.println("Enter a number : ");
                     a = sc.nextInt();
-                    System.out.println("Log of " + a + " = " + cal.logarithm(a));
+                    System.out.println("Log of " + a + " = " + cal.logarithm(a)+"\n");
                     break;
                 case 8:
                     System.out.println("Enter two number : ");
                     a = sc.nextInt();
                     b = sc.nextInt();
-                    System.out.println(a + " to power " + b + " = " + cal.power(a, b));
+                    System.out.println(a + " to power " + b + " = " + cal.power(a, b)+"\n");
                     break;
                 case 9:
                     System.out.println("Thank You!");
                     break;
                 default:
-                    System.out.println("Invalid choice!");
+                    System.out.println("Invalid choice!\n");
                     break;
             }
 
         }while(opt!=9);
-
-
-
-
     }
-
 }
