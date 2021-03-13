@@ -147,47 +147,47 @@ public class Calculator {
             switch (opt) {
                 case 1:
                     System.out.println("Enter two number : ");
-                    a = sc.nextInt();
-                    b = sc.nextInt();
+                    a = sc.nextDouble();
+                    b = sc.nextDouble();
                     System.out.println(a + " + " + b + " = " + cal.addition(a, b)+"\n");
                     break;
                 case 2:
                     System.out.println("Enter two number : ");
-                    a = sc.nextInt();
-                    b = sc.nextInt();
+                    a = sc.nextDouble();
+                    b = sc.nextDouble();
                     System.out.println(a + " - " + b + " = " + cal.subtraction(a, b)+"\n");
                     break;
                 case 3:
                     System.out.println("Enter two number : ");
-                    a = sc.nextInt();
-                    b = sc.nextInt();
+                    a = sc.nextDouble();
+                    b = sc.nextDouble();
                     System.out.println(a + " * " + b + " = " + cal.multiplication(a, b)+"\n");
                     break;
                 case 4:
                     System.out.println("Enter two number : ");
-                    a = sc.nextInt();
-                    b = sc.nextInt();
+                    a = sc.nextDouble();
+                    b = sc.nextDouble();
                     System.out.println(a + " / " + b + " = " + cal.division(a, b)+"\n");
                     break;
                 case 5:
                     System.out.println("Enter a number : ");
-                    a = sc.nextInt();
+                    a = sc.nextDouble();
                     System.out.println("Square Root of " + a + " = " + cal.squareroot(a)+"\n");
                     break;
                 case 6:
                     System.out.println("Enter a number : ");
-                    a = sc.nextInt();
+                    a = sc.nextDouble();
                     System.out.println("Factorial of " + a + " = " + cal.factorial(a)+"\n");
                     break;
                 case 7:
                     System.out.println("Enter a number : ");
-                    a = sc.nextInt();
+                    a = sc.nextDouble();
                     System.out.println("Log of " + a + " = " + cal.logarithm(a)+"\n");
                     break;
                 case 8:
                     System.out.println("Enter two number : ");
-                    a = sc.nextInt();
-                    b = sc.nextInt();
+                    a = sc.nextDouble();
+                    b = sc.nextDouble();
                     System.out.println(a + " to power " + b + " = " + cal.power(a, b)+"\n");
                     break;
                 case 9:

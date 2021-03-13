@@ -80,8 +80,8 @@ public class CalculatorTest {
 
     @org.junit.Test
     public void logarithmTruePositive(){
-        assertEquals("Finding natural log for True Positive", 0, cal.logarithm(1), DELTA);
-        assertEquals("Finding natural log for True Positive", 0, cal.logarithm(1), DELTA);
+        assertEquals("Finding natural log for True Positive", 2.302585092994046, cal.logarithm(10), DELTA);
+        assertEquals("Finding natural log for True Positive", 3.2188758248682006, cal.logarithm(25), DELTA);
     }
 
     @org.junit.Test
@@ -92,8 +92,8 @@ public class CalculatorTest {
 
     @org.junit.Test
     public void squarerootTruePositive(){
-        assertEquals("Finding square root for True Positive", 2, cal.squareroot(4), DELTA);
-        assertEquals("Finding square root for True Positive", 1, cal.squareroot(1), DELTA);
+        assertEquals("Finding square root for True Positive", 9, cal.squareroot(81), DELTA);
+        assertEquals("Finding square root for True Positive", 12, cal.squareroot(144), DELTA);
     }
 
     @Test
