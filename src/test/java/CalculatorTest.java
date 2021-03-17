@@ -8,6 +8,18 @@ public class CalculatorTest {
     Calculator cal= new Calculator();
 
     @org.junit.Test
+    public void factorialTruePositive(){
+        assertEquals("Finding factorial of a number for True Positive", 120, cal.factorial(5), DELTA);
+        assertEquals("Finding factorial of a number for True Positive", 24, cal.factorial(4), DELTA);
+    }
+
+    @org.junit.Test
+    public void factorialFalsePositive(){
+        assertNotEquals("Finding factorial of a number for False Positive", 120, cal.factorial(6), DELTA);
+        assertNotEquals("Finding factorial of a number for False Positive", 24, cal.factorial(3), DELTA);
+    }
+
+    @org.junit.Test
     public void additionTruePositive(){
         assertEquals("Addition of 2 numbers for True Positive", 12, cal.addition(5,7), DELTA);
         assertEquals("Addition of 2 numbers for True Positive", 23, cal.addition(4,19), DELTA);
@@ -54,17 +66,6 @@ public class CalculatorTest {
         assertNotEquals("Division of 2 numbers for False Positive", 9, cal.division(24,4), DELTA);
     }
 
-    @org.junit.Test
-    public void factorialTruePositive(){
-        assertEquals("Finding factorial of a number for True Positive", 120, cal.factorial(5), DELTA);
-        assertEquals("Finding factorial of a number for True Positive", 24, cal.factorial(4), DELTA);
-    }
-
-    @org.junit.Test
-    public void factorialFalsePositive(){
-        assertNotEquals("Finding factorial of a number for False Positive", 120, cal.factorial(6), DELTA);
-        assertNotEquals("Finding factorial of a number for False Positive", 24, cal.factorial(3), DELTA);
-    }
 
     @org.junit.Test
     public void powerTruePositive(){

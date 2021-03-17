@@ -4,6 +4,27 @@ import org.apache.logging.log4j.Logger;
 
 public class Calculator {
 
+
+    public double squareroot(double a) {
+        double res=0;
+        try {
+            logger.info("Calculating squareroot of : " + a);
+            if(a<0)
+            {
+                res=Double.NaN;
+                throw new Exception("Number < 0");
+            }
+            else
+                res = Math.sqrt(a);
+        } catch (Exception e) {
+            logger.error("Number cannot be negative "+e.getMessage());
+        }
+        finally {
+            logger.info("Squareroot is : "+res);
+        }
+        return res;
+    }
+
     public double addition(double a,double b)
     {
         double res;
@@ -37,25 +58,6 @@ public class Calculator {
         logger.info("Calculating division of two number : "+a+" and "+b);
         res = a/b;
         logger.info("Quotient is : "+res);
-        return res;
-    }
-    public double squareroot(double a) {
-        double res=0;
-        try {
-            logger.info("Calculating squareroot of : " + a);
-            if(a<0)
-            {
-                res=Double.NaN;
-                throw new Exception("Number < 0");
-            }
-            else
-                res = Math.sqrt(a);
-        } catch (Exception e) {
-            logger.error("Number cannot be negative "+e.getMessage());
-        }
-        finally {
-            logger.info("Squareroot is : "+res);
-        }
         return res;
     }
 
